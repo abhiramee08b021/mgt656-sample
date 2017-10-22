@@ -1,0 +1,24 @@
+extends layout
+//- var event_id = #{event_id}; 
+
+block content
+  h1#title #{event.title}
+  span#date Date: #{event.date}
+  span#location Location: #{event.location}
+  img#image(href=event.image)
+  p Attendees
+  ul#attendees
+    - for (var i = 0; i< event.attendees.length; i++)
+        li.list-group-item #{event.attendees[i]}
+  
+  form(method="POST" action='')
+    div.form-group
+      label(name="email" for="email") Enter Email to RSVP
+      input.form-control#email(name="email" type="email")
+
+      button(type="submit" class="btn btn-primary") Submit
+
+  if errors
+    ul.form-errors
+      for error in errors
+        li #{errors}

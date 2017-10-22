@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  p Welcome to #{title}
+  img#logo(src="images/evently.jpg" width="60px" height="60px")
+  a#new(href="/events/new") Create New Event
+  p Here are a list of current events
+  ul
+    - for (var i=0; i<=events.events.length-1; i++){
+      li.event(id="event-" + events.events[i].id)
+        a#title(href='/events/'+ events.events[i].id) #{events.events[i].title} - 
+        time #{events.events[i].time}
+    - }

@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js") 
+    script(src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js")
+  body
+    
+    div.container
+      header.header
+        a(href="/")
+          h1 Evently
+    block content
+    footer.footer(background="red")
+      div.container
+        span.text-muted
+          a(href="/") Home
+          a(href="/about") About
